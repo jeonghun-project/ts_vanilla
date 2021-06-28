@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motion project</title>
     <link rel="stylesheet" href="style/index.css" type="text/css"></style>
+    <script type='module' src="./dist/main.js" defer></script>
   </head>
   <body>
-    <div class='mainContainer'>
+    <div class='app'>
 
-      <div class="topContainer">
-        <h1>여기가 제목</h1>
-        <div class="nav">
-          <input class='btn image' type="button" value="image" />
-          <input class='btn video' type="button" value="video" />
-          <input class='btn memo' type="button" value="memo" />
-          <input class='btn task' type="button" value="task" />
-        </div>
-      </div>
+      <header class="banner">
+        <h1 class='banner__title'>Jeong's motion</h1>
+        <ul class="control-panel">
+          <li><button id="new-image" class='create-button' >image</button></li>
+          <li><button id="new-video" class='create-button' >video</button></li>
+          <li><button id="new-note" class='create-button'>note</button></li>
+          <li><button id="new-todo" class='create-button'>todo</button></li>
+        </ul>
+      </header>
+      <main class="document"></main>
+      <footer class="footer">
+        <p> Copyright by Jeonghun</p>
+      </footer>
     </div>
 
-    <script src="./dist/main.js"></script>
   </body>
 </html>
