@@ -1,12 +1,18 @@
-import * as imageImpls from "./imageBtnHandler";
+import { ImageComponent } from "./components/page/item/image.js";
+import { PageComponent } from "./components/page/page.js";
 
-const imageBtn = document.querySelector(".image");
-const videoBtn = document.querySelector(".video");
-const memoBtn = document.querySelector(".memo");
-const taskBtn = document.querySelector(".task");
+class App {
+  private readonly page: PageComponent;
+  constructor(appRoot: HTMLElement) {
+    this.page = new PageComponent();
+    this.page.attachTo(appRoot);
 
-function createItem() {
-  const imageElement = new imageImpls();
+    const image = new ImageComponent(
+      "Image Title",
+      "https://picsum.photos/600/300"
+    );
+    image.attachTo(appRoot, "beforeend");
+  }
 }
 
-imageBtn?.addEventListener("click");
+new App(document.querySelector(".document")! as HTMLElement);
